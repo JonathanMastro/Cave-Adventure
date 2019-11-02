@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 16, in script
+    if test == "yes":
+  File "game/script.rpy", line 16, in <module>
+    if test == "yes":
+NameError: name 'test' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 16, in script
+    if test == "yes":
+  File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
+    if renpy.python.py_eval(condition):
+  File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 16, in <module>
+    if test == "yes":
+NameError: name 'test' is not defined
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+Cave Adventure 1.0
+Sat Nov 02 17:00:09 2019

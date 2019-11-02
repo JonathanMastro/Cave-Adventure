@@ -4,7 +4,7 @@
 # name of the character.
 
 define e = Character("Eileen")
-
+define t = Character("DevTest")
 
 # The game starts here.
 
@@ -16,6 +16,12 @@ label start:
 
     scene bg room
 
+    menu:
+        "test1":
+            jump test
+
+        "test2":
+            jump test2
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
@@ -29,5 +35,35 @@ label start:
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
+
+    return
+
+
+
+label test:
+    scene bg testpicture
+    t "test1 scene selected"
+
+    menu:
+        "start":
+            jump start
+
+        "test2":
+            jump test2
+
+    return
+
+
+
+label test2:
+    scene bg testpicture
+    t "Test2 scene selected"
+
+    menu:
+        "start":
+            jump start
+
+        "test1":
+            jump test
 
     return
