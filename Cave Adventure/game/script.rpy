@@ -22,6 +22,9 @@ label start:
 
         "test2":
             jump test2
+
+        "quit":
+            return
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
@@ -51,7 +54,8 @@ label test:
         "test2":
             jump test2
 
-    return
+        "quit":
+            return
 
 
 
@@ -66,4 +70,5 @@ label test2:
         "test1":
             jump test
 
-    return
+        "quit":
+            return
