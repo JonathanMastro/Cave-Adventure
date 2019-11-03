@@ -9,10 +9,11 @@ define N = Character("")
 label start:
 
     scene bg room
+    N "Game start, moving to room #3"
+    jump Room3
 
 
 
-return
 
 
 #Room #1
