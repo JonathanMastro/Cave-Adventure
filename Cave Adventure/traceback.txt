@@ -1,22 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 68, in script
-    jump Start
-ScriptError: could not find label 'Start'.
+  File "renpy/common/00start.rpy", line 273, in script
+    python:
+ScriptError: could not find label 'start'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 68, in script
-    jump Start
-  File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
-    rv = renpy.game.script.lookup(target)
+  File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
+    run(restart)
+  File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
+    renpy.execution.run_context(True)
+  File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
+    context.run()
+  File "renpy/common/00start.rpy", line 273, in script
+    python:
   File "E:\ProgrammingTools\renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'Start'.
+ScriptError: could not find label 'start'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Cave Adventure 1.0
-Sat Nov 02 20:13:35 2019
+Sun Nov 03 16:23:39 2019

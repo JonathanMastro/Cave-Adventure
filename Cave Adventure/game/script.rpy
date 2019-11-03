@@ -6,11 +6,22 @@ define N = Character("")
 
 
 #Game start
-label start:
 
-    scene bg room
-    N "Game start, moving to room #3"
-    jump Room3
+label start:
+    scene bg devmap
+    N "Game start"
+    jump CaveEntrance
+
+
+
+
+label CaveEntrance:
+
+    scene bg outsidecave
+    N "Cave Entrance"
+    menu:
+        "Enter cave":
+            jump Room3
 
 
 
@@ -19,7 +30,7 @@ label start:
 #Room #1
 label Room1:
     #Forward and right picture
-    scene bg ForwardnRight
+    scene bg forwardnright
     t "Room #1"
 
     menu:
@@ -65,7 +76,7 @@ label Room3:
 
         "Backward":
             #exits the cave
-            jump Start
+            jump CaveEntrance
 
 
 #Room #4
@@ -88,7 +99,7 @@ label Room4:
 #Room #5
 label Room5:
     #Forward and left picture
-    scene bg ForwardnLeft
+    scene bg forwardnleft
     t "Room #5"
 
     menu:
@@ -101,8 +112,8 @@ label Room5:
 
 #Room #6
 label Room6:
-    #Forward and left picture
-    scene bg ForwardnLeft
+    #Forward and right picture
+    scene bg forwardnright
     t "Room #6"
 
     menu:
@@ -175,7 +186,7 @@ label Room9:
 #Room #10
 label Room10:
     #Forward and left picture
-    scene bg ForwardnLeft
+    scene bg forwardnleft
     t "Room #10"
 
     menu:
@@ -191,7 +202,7 @@ label Room10:
 #Room #11
 label Room11:
     #Right picture
-    scene bg Right
+    scene bg right
     t "Room #11"
 
     menu:
@@ -204,7 +215,7 @@ label Room11:
 #Room #12
 label Room12:
     #Left and right picture
-    scene bg LeftnRight
+    scene bg leftnright
     t "Room #12"
 
     menu:
@@ -220,7 +231,7 @@ label Room12:
 #Room #13
 label Room13:
     #Left and right picture
-    scene bg LeftnRight
+    scene bg leftnright
     t "Room #13"
 
     menu:
@@ -236,7 +247,7 @@ label Room13:
 #Room #14
 label Room14:
     #Left and right picture
-    scene bg LeftnRight
+    scene bg leftnright
     t "Room #14"
 
     menu:
@@ -252,7 +263,7 @@ label Room14:
 #Room #15
 label Room15:
     #Left and blocked right picture
-    scene bg LeftnBRight
+    scene bg leftnbright
     t "Room #15"
 
     menu:
@@ -262,12 +273,15 @@ label Room15:
         "Backward":
             jump Room10
 
+        "Devtest: Treasure room":
+            jump Room16
+
         #need to make a if tnt has been used to allow going right and switch picture
 
 #Room #16
 label Room16:
     #treasure room
-    scene bg TreasureRoom
+    scene bg treasureroom
     t "Room #16"
 
     menu:
