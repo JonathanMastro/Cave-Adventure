@@ -19,7 +19,7 @@ label start:
 #Room #1
 label Room1:
     #Forward and right picture
-    scene bg testpicture
+    scene bg ForwardnRight
     t "Room #1"
 
     menu:
@@ -33,7 +33,7 @@ label Room1:
 #Room #2
 label Room2:
     #3 doors picture
-    scene bg testpicture
+    scene bg 3doors
     t "Room #2"
 
     menu:
@@ -50,7 +50,7 @@ label Room2:
 #Room #3
 label Room3:
     #3 doors picture
-    scene bg testpicture
+    scene bg 3doors
     t "Room #3"
 
     menu:
@@ -71,7 +71,7 @@ label Room3:
 #Room #4
 label Room4:
     #3 doors picture
-    scene bg testpicture
+    scene bg 3doors
     t "Room #4"
 
     menu:
@@ -88,7 +88,7 @@ label Room4:
 #Room #5
 label Room5:
     #Forward and left picture
-    scene bg testpicture
+    scene bg ForwardnLeft
     t "Room #5"
 
     menu:
@@ -102,7 +102,7 @@ label Room5:
 #Room #6
 label Room6:
     #Forward and left picture
-    scene bg testpicture
+    scene bg ForwardnLeft
     t "Room #6"
 
     menu:
@@ -118,7 +118,7 @@ label Room6:
 #Room #7
 label Room7:
     #3 doors picture
-    scene bg testpicture
+    scene bg 3doors
     t "Room #7"
 
     menu:
@@ -137,7 +137,7 @@ label Room7:
 #Room #8
 label Room8:
     #3 doors picture
-    scene bg testpicture
+    scene bg 3doors
     t "Room #8"
 
     menu:
@@ -156,7 +156,7 @@ label Room8:
 #Room #9
 label Room9:
     #3 doors picture
-    scene bg testpicture
+    scene bg 3doors
     t "Room #9"
 
     menu:
@@ -175,7 +175,7 @@ label Room9:
 #Room #10
 label Room10:
     #Forward and left picture
-    scene bg testpicture
+    scene bg ForwardnLeft
     t "Room #10"
 
     menu:
@@ -191,7 +191,7 @@ label Room10:
 #Room #11
 label Room11:
     #Right picture
-    scene bg testpicture
+    scene bg Right
     t "Room #11"
 
     menu:
@@ -204,7 +204,7 @@ label Room11:
 #Room #12
 label Room12:
     #Left and right picture
-    scene bg testpicture
+    scene bg LeftnRight
     t "Room #12"
 
     menu:
@@ -220,7 +220,7 @@ label Room12:
 #Room #13
 label Room13:
     #Left and right picture
-    scene bg testpicture
+    scene bg LeftnRight
     t "Room #13"
 
     menu:
@@ -236,7 +236,7 @@ label Room13:
 #Room #14
 label Room14:
     #Left and right picture
-    scene bg testpicture
+    scene bg LeftnRight
     t "Room #14"
 
     menu:
@@ -251,8 +251,8 @@ label Room14:
 
 #Room #15
 label Room15:
-    #Left picture
-    scene bg testpicture
+    #Left and blocked right picture
+    scene bg LeftnBRight
     t "Room #15"
 
     menu:
@@ -262,11 +262,12 @@ label Room15:
         "Backward":
             jump Room10
 
-        #need to make an exception after using tnt
+        #need to make a if tnt has been used to allow going right and switch picture
 
 #Room #16
 label Room16:
-    scene bg testpicture
+    #treasure room
+    scene bg TreasureRoom
     t "Room #16"
 
     menu:
