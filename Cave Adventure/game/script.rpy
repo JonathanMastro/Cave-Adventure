@@ -150,7 +150,10 @@ label Room6:
 #Room #7
 label Room7:
     #3 doors picture
-    scene bg 3doors
+    if (tnt == "true"):
+        scene bg 3doors
+    else:
+        scene bg tnt3doors
     t "Room #7"
 
     menu:
