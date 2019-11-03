@@ -5,15 +5,32 @@ define t = Character("DevTest")
 define N = Character("")
 
 
-
 #Game start
-
 label start:
     scene devmap
+    #creating flags/variables
     $ hiddenwall = "true"
     $ tnt = "false"
     N "Game start"
-    jump CaveEntrance
+    jump ItemSelection
+
+
+label ItemSelection:
+    scene bg blank
+
+    t "item selection - pick one"
+
+    menu:
+        "take tnt":
+            $tnt = "true"
+            jump CaveEntrance
+        "take nothing":
+            jump CaveEntrance
+
+        #items to add
+        #map - add menu option to check map in each room
+        #crowbar for doors - add a room to find crowbar
+        #if have time, add an "are you sure" option to the menu.
 
 
 
