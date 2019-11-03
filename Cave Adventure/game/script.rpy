@@ -5,6 +5,7 @@ define t = Character("DevTest")
 define N = Character("")
 
 
+
 #Game start
 
 label start:
@@ -21,7 +22,10 @@ label CaveEntrance:
     N "Cave Entrance"
     menu:
         "Enter cave":
-            jump Room3
+            $ hiddenwall = "true"
+            $ tnt = "true"
+            jump Room14
+
 
 
 
@@ -263,7 +267,11 @@ label Room14:
 #Room #15
 label Room15:
     #Left and blocked right picture
-    scene bg leftnbright
+    if (hiddenwall == "true"):
+        scene bg leftnbright
+    else:
+        scene bg leftnright
+
     t "Room #15"
 
     menu:
@@ -276,7 +284,15 @@ label Room15:
         "Devtest: Treasure room":
             jump Room16
 
-        #need to make a if tnt has been used to allow going right and switch picture
+        "blow up wall" if (tnt == "true" and hiddenwall == "true"):
+            $tnt = "false"
+            $hiddenwall = "false"
+            jump Room15
+
+        "Right" if hiddenwall == "false":
+            jump Room16
+
+
 
 #Room #16
 label Room16:

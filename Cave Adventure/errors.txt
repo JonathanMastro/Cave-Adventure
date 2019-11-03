@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 15: expected menuitem
-    jump Room3
-    ^
+File "game/script.rpy", line 271: expected ':' not found.
+    else
+        ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Nov 03 16:22:44 2019
+Sun Nov 03 16:22:39 2019
