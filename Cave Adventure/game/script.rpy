@@ -9,7 +9,9 @@ define N = Character("")
 #Game start
 
 label start:
-    scene bg devmap
+    scene devmap
+    $ hiddenwall = "true"
+    $ tnt = "false"
     N "Game start"
     jump CaveEntrance
 
@@ -22,9 +24,7 @@ label CaveEntrance:
     N "Cave Entrance"
     menu:
         "Enter cave":
-            $ hiddenwall = "true"
-            $ tnt = "true"
-            jump Room14
+            jump Room3
 
 
 
@@ -148,6 +148,10 @@ label Room7:
 
         "Backward":
             jump Room2
+
+        "Pick up tnt" if tnt == "false":
+            $ tnt = "true"
+            jump Room7
 
 #Room #8
 label Room8:
@@ -280,9 +284,6 @@ label Room15:
 
         "Backward":
             jump Room10
-
-        "Devtest: Treasure room":
-            jump Room16
 
         "blow up wall" if (tnt == "true" and hiddenwall == "true"):
             $tnt = "false"
