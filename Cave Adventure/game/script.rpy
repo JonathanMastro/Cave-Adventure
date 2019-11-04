@@ -67,9 +67,6 @@ label ItemSelection:
                 "No":
                     jump ItemSelection
 
-        #items to add
-        #map - add menu option to check map in each room
-        #crowbar for doors - add a room to find crowbar
 
 label introduction:
     N "You head off to a cave rumoured to have massive riches hidden inside."
@@ -91,7 +88,6 @@ label CaveEntrance:
 
 #Room #1
 label Room1:
-    #Forward and right picture
     scene bg forwardnright
 
     menu:
@@ -111,7 +107,6 @@ label Room1:
 
 #Room #2
 label Room2:
-    #3 doors picture
     scene bg 3doors
 
     menu:
@@ -134,7 +129,6 @@ label Room2:
 
 #Room #3
 label Room3:
-    #3 doors picture
     scene bg 3doors
 
     menu:
@@ -160,7 +154,6 @@ label Room3:
 
 #Room #4
 label Room4:
-    #3 doors picture
     scene bg 3doors
 
     menu:
@@ -183,7 +176,6 @@ label Room4:
 
 #Room #5
 label Room5:
-    #Forward and left picture
     scene bg forwardnleft
 
     menu:
@@ -203,7 +195,6 @@ label Room5:
 
 #Room #6
 label Room6:
-    #Forward and right picture
     scene bg forwardnright
 
     menu:
@@ -226,7 +217,6 @@ label Room6:
 
 #Room #7
 label Room7:
-    #3 doors picture
     if (tnt == "true"):
         scene bg 3doors
     else:
@@ -261,7 +251,6 @@ label Room7:
 
 #Room #8
 label Room8:
-    #3 doors picture
     scene bg 3doors
 
     menu:
@@ -287,7 +276,6 @@ label Room8:
 
 #Room #9
 label Room9:
-    #3 doors picture
     scene bg 3doors
 
     menu:
@@ -313,7 +301,6 @@ label Room9:
 
 #Room #10
 label Room10:
-    #Forward and left picture
     scene bg forwardnleft
 
     menu:
@@ -336,7 +323,6 @@ label Room10:
 
 #Room #11
 label Room11:
-    #Right picture
     scene bg right
 
     menu:
@@ -356,7 +342,6 @@ label Room11:
 
 #Room #12
 label Room12:
-    #Left and right picture
     scene bg leftnright
 
     menu:
@@ -379,7 +364,6 @@ label Room12:
 
 #Room #13
 label Room13:
-    #Left and right picture
     scene bg leftnright
 
     menu:
@@ -402,7 +386,6 @@ label Room13:
 
 #Room #14
 label Room14:
-    #Left and right picture
     scene bg leftnright
 
     menu:
@@ -425,7 +408,6 @@ label Room14:
 
 #Room #15
 label Room15:
-    #Left and blocked right picture
     if (hiddenwall == "true"):
         scene bg leftnbright
         N "There's a cracked wall on the right side of the room."
@@ -461,9 +443,8 @@ label Room15:
                     jump Room15
 
 
-#Room #16
+#Room #16 - treasure room
 label Room16:
-    #treasure room
     scene bg treasureroom
     N "You've found the hidden treasure room!"
     N "The walls are made of gold and the floor is (badly drawn) marble tiles!"
