@@ -471,4 +471,6 @@ label Room16:
 
     menu:
         "Collect the treasure and leave":
+            N "You take both chests and carry them home with you."
+            N "With your newfound treasure, you now have enough money to live comfortably without ever having to work again."
             return
