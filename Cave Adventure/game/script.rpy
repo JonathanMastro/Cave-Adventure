@@ -1,7 +1,6 @@
 ﻿# The script of the game goes in this file.
 
 #voice actors
-define t = Character("DevTest")
 define N = Character("")
 
 
@@ -11,6 +10,8 @@ label start:
     #creating flags/variables
     $ hiddenwall = "true"
     $ tnt = "false"
+    $ crowbar = "false"
+    $ map = "false"
     jump ItemSelection
 
 
@@ -21,10 +22,47 @@ label ItemSelection:
 
     menu:
         "take tnt":
-            $tnt = "true"
-            jump CaveEntrance
+            N "Are you sure?"
+            menu:
+                "Yes":
+                        $tnt = "true"
+                        jump CaveEntrance
+
+                "No":
+                    jump ItemSelection
+
+
+        "take crowbar":
+            N "Are you sure?"
+            menu:
+                "Yes":
+                    $crowbar = "true"
+                    jump CaveEntrance
+
+                "No":
+                    jump ItemSelection
+
+
+        "take map":
+            N "Are you sure?"
+            menu:
+                "Yes":
+                        $map = "true"
+                        jump CaveEntrance
+
+                "No":
+                    jump ItemSelection
+
+
         "take nothing":
-            jump CaveEntrance
+            N "Are you sure?"
+            menu:
+                "Yes":
+                    N "You've decide you don't need any crutches like 'maps' or 'crowbars' to go treasure hunting."
+                    jump CaveEntrance
+
+                "No":
+                    jump ItemSelection
 
         #items to add
         #map - add menu option to check map in each room
