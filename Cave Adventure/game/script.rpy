@@ -11,14 +11,13 @@ label start:
     #creating flags/variables
     $ hiddenwall = "true"
     $ tnt = "false"
-    N "Game start"
     jump ItemSelection
 
 
 label ItemSelection:
     scene bg blank
 
-    t "item selection - pick one"
+    N "Pick one item to help you in the game."
 
     menu:
         "take tnt":
@@ -32,27 +31,22 @@ label ItemSelection:
         #crowbar for doors - add a room to find crowbar
         #if have time, add an "are you sure" option to the menu.
 
-
+label introduction:
+    N "You head off to a cave rumoured to have massive riches hidden inside."
 
 
 label CaveEntrance:
 
     scene bg outsidecave
-    N "Cave Entrance"
     menu:
         "Enter cave":
             jump Room3
-
-
-
-
 
 
 #Room #1
 label Room1:
     #Forward and right picture
     scene bg forwardnright
-    t "Room #1"
 
     menu:
         "Forward":
@@ -66,7 +60,6 @@ label Room1:
 label Room2:
     #3 doors picture
     scene bg 3doors
-    t "Room #2"
 
     menu:
         "Forward":
@@ -83,7 +76,6 @@ label Room2:
 label Room3:
     #3 doors picture
     scene bg 3doors
-    t "Room #3"
 
     menu:
         "Forward":
@@ -96,7 +88,6 @@ label Room3:
             jump Room4
 
         "Backward":
-            #exits the cave
             jump CaveEntrance
 
 
@@ -104,7 +95,6 @@ label Room3:
 label Room4:
     #3 doors picture
     scene bg 3doors
-    t "Room #4"
 
     menu:
         "Forward":
@@ -121,7 +111,6 @@ label Room4:
 label Room5:
     #Forward and left picture
     scene bg forwardnleft
-    t "Room #5"
 
     menu:
         "Forward":
@@ -135,7 +124,6 @@ label Room5:
 label Room6:
     #Forward and right picture
     scene bg forwardnright
-    t "Room #6"
 
     menu:
         "Forward":
@@ -154,7 +142,7 @@ label Room7:
         scene bg 3doors
     else:
         scene bg tnt3doors
-    t "Room #7"
+        N "You find a stick of tnt laying in the center of the room."
 
     menu:
         "Forward":
@@ -171,13 +159,13 @@ label Room7:
 
         "Pick up tnt" if tnt == "false":
             $ tnt = "true"
+            N "You pick up the tnt and put it in your pocket."
             jump Room7
 
 #Room #8
 label Room8:
     #3 doors picture
     scene bg 3doors
-    t "Room #8"
 
     menu:
         "Forward":
@@ -196,7 +184,6 @@ label Room8:
 label Room9:
     #3 doors picture
     scene bg 3doors
-    t "Room #9"
 
     menu:
         "Forward":
@@ -215,7 +202,6 @@ label Room9:
 label Room10:
     #Forward and left picture
     scene bg forwardnleft
-    t "Room #10"
 
     menu:
         "Forward":
@@ -231,7 +217,6 @@ label Room10:
 label Room11:
     #Right picture
     scene bg right
-    t "Room #11"
 
     menu:
         "Right":
@@ -244,7 +229,6 @@ label Room11:
 label Room12:
     #Left and right picture
     scene bg leftnright
-    t "Room #12"
 
     menu:
         "Left":
@@ -260,7 +244,6 @@ label Room12:
 label Room13:
     #Left and right picture
     scene bg leftnright
-    t "Room #13"
 
     menu:
         "Left":
@@ -276,7 +259,6 @@ label Room13:
 label Room14:
     #Left and right picture
     scene bg leftnright
-    t "Room #14"
 
     menu:
         "Left":
@@ -293,10 +275,13 @@ label Room15:
     #Left and blocked right picture
     if (hiddenwall == "true"):
         scene bg leftnbright
+        N "There's a cracked wall on the right side of the room."
+        N "Maybe something could blow it open?"
     else:
         scene bg leftnright
+        N "There's a door shaped hole in the wall left by the tnt explosion."
 
-    t "Room #15"
+
 
     menu:
         "Left":
@@ -308,6 +293,8 @@ label Room15:
         "blow up wall" if (tnt == "true" and hiddenwall == "true"):
             $tnt = "false"
             $hiddenwall = "false"
+            N "You light the tnt and throw it at the wall."
+            N "You hear a loud explosion followed by rocks hitting the ground."
             jump Room15
 
         "Right" if hiddenwall == "false":
@@ -319,8 +306,10 @@ label Room15:
 label Room16:
     #treasure room
     scene bg treasureroom
-    t "Room #16"
+    N "You've found the hidden treasure room!"
+    N "The walls are made of gold and the floor is (badly drawn) marble tiles!"
+    N "In the center is two big treasure chests filled with gold and jewels."
 
     menu:
-        "Left":
-            jump Room15
+        "Collect the treasure and leave":
+            return
