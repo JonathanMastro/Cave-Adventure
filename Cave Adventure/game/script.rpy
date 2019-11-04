@@ -25,8 +25,9 @@ label ItemSelection:
             N "Are you sure?"
             menu:
                 "Yes":
-                        $tnt = "true"
-                        jump CaveEntrance
+                    N "You've decided that taking explosives to find treasure in a cave is a good idea."
+                    $tnt = "true"
+                    jump CaveEntrance
 
                 "No":
                     jump ItemSelection
@@ -36,6 +37,7 @@ label ItemSelection:
             N "Are you sure?"
             menu:
                 "Yes":
+                    N "You've decided to take the crowbar."
                     $crowbar = "true"
                     jump CaveEntrance
 
@@ -47,8 +49,9 @@ label ItemSelection:
             N "Are you sure?"
             menu:
                 "Yes":
-                        $map = "true"
-                        jump CaveEntrance
+                    N "You've decided to take the map."
+                    $map = "true"
+                    jump CaveEntrance
 
                 "No":
                     jump ItemSelection
@@ -58,7 +61,7 @@ label ItemSelection:
             N "Are you sure?"
             menu:
                 "Yes":
-                    N "You've decide you don't need any crutches like 'maps' or 'crowbars' to go treasure hunting."
+                    N "You've decided you don't need any crutches like 'maps' or 'crowbars' to go treasure hunting."
                     jump CaveEntrance
 
                 "No":
@@ -67,7 +70,6 @@ label ItemSelection:
         #items to add
         #map - add menu option to check map in each room
         #crowbar for doors - add a room to find crowbar
-        #if have time, add an "are you sure" option to the menu.
 
 label introduction:
     N "You head off to a cave rumoured to have massive riches hidden inside."
