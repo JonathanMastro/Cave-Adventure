@@ -81,6 +81,12 @@ label CaveEntrance:
     menu:
         "Enter cave":
             jump Room3
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump CaveEntrance
 
 
 #Room #1
@@ -94,6 +100,13 @@ label Room1:
 
         "Right":
             jump Room2
+
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room1
 
 
 #Room #2
@@ -110,6 +123,13 @@ label Room2:
 
         "Right":
             jump Room3
+
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room2
 
 
 #Room #3
@@ -130,6 +150,13 @@ label Room3:
         "Backward":
             jump CaveEntrance
 
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room3
+
 
 #Room #4
 label Room4:
@@ -146,6 +173,13 @@ label Room4:
         "Right":
             jump Room5
 
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room4
+
 
 #Room #5
 label Room5:
@@ -158,6 +192,13 @@ label Room5:
 
         "Left":
             jump Room4
+
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room5
 
 
 #Room #6
@@ -174,6 +215,14 @@ label Room6:
 
         "Backward":
             jump Room1
+
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room6
+
 
 #Room #7
 label Room7:
@@ -202,6 +251,14 @@ label Room7:
             N "You pick up the tnt and put it in your pocket."
             jump Room7
 
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room7
+
+
 #Room #8
 label Room8:
     #3 doors picture
@@ -219,6 +276,14 @@ label Room8:
 
         "Backward":
             jump Room3
+
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room8
+
 
 #Room #9
 label Room9:
@@ -238,6 +303,14 @@ label Room9:
         "Backward":
             jump Room4
 
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room9
+
+
 #Room #10
 label Room10:
     #Forward and left picture
@@ -253,6 +326,14 @@ label Room10:
         "Backward":
             jump Room5
 
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room10
+
+
 #Room #11
 label Room11:
     #Right picture
@@ -264,6 +345,14 @@ label Room11:
 
         "Backward":
             jump Room6
+
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room11
+
 
 #Room #12
 label Room12:
@@ -280,6 +369,14 @@ label Room12:
         "Backward":
             jump Room7
 
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room12
+
+
 #Room #13
 label Room13:
     #Left and right picture
@@ -295,6 +392,14 @@ label Room13:
         "Backward":
             jump Room8
 
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room13
+
+
 #Room #14
 label Room14:
     #Left and right picture
@@ -309,6 +414,14 @@ label Room14:
 
         "Backward":
             jump Room9
+
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room14
+
 
 #Room #15
 label Room15:
@@ -340,6 +453,12 @@ label Room15:
         "Right" if hiddenwall == "false":
             jump Room16
 
+        "Read map" if map == "true":
+            show playermap
+            menu:
+                "done":
+                    hide playermap
+                    jump Room15
 
 
 #Room #16
