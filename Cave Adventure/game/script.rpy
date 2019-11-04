@@ -11,6 +11,8 @@ label start:
     $ hiddenwall = "true"
     $ tnt = "false"
     $ crowbar = "false"
+    $ tntused = "false"
+    $ crowbarused = "false"
     $ map = "false"
     jump ItemSelection
 
@@ -176,7 +178,11 @@ label Room4:
 
 #Room #5
 label Room5:
-    scene bg forwardnleft
+    if (crowbar == "true"):
+        scene bg forwardnleft
+    else:
+        scene bg crowbarforwardnleft
+        N "You find a crowbar laying in the center of the room."
 
     menu:
         "Forward":
@@ -184,6 +190,11 @@ label Room5:
 
         "Left":
             jump Room4
+
+        "Pick up crowbar" if crowbar == "false":
+            $ crowbar = "true"
+            N "You pick up the crowbar."
+            jump Room5
 
         "Read map" if map == "true":
             show playermap
@@ -411,11 +422,16 @@ label Room15:
     if (hiddenwall == "true"):
         scene bg leftnbright
         N "There's a cracked wall on the right side of the room."
-        N "Maybe something could blow it open?"
+        N "Maybe something could break it open?"
+    elif (tntused == "true"):
+        scene bg leftnright
+        N "There's a door shaped hole in the right wall caused by the tnt explosion."
+    elif (crowbarused == "true"):
+        scene bg leftnright
+        N "There's a door shaped hole in the right wall caused by you and your crowbar."
     else:
         scene bg leftnright
-        N "There's a door shaped hole in the wall left by the tnt explosion."
-
+        N "There's a door shaped hole in the right wall."
 
 
     menu:
@@ -427,9 +443,20 @@ label Room15:
 
         "blow up wall" if (tnt == "true" and hiddenwall == "true"):
             $tnt = "false"
+            $tntused = "true"
             $hiddenwall = "false"
             N "You light the tnt and throw it at the wall."
             N "You hear a loud explosion followed by rocks hitting the ground."
+            jump Room15
+
+        "Break open wall" if (crowbar == "true" and hiddenwall == "true"):
+            $crowbarused = "true"
+            $hiddenwall = "false"
+            N "You take your crowbar out."
+            N "You begin to use the crowbar to repeatedly whack the cracked wall and breaking rocks away."
+            N "."
+            N ".."
+            N "..."
             jump Room15
 
         "Right" if hiddenwall == "false":
